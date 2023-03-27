@@ -134,7 +134,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #393E46;
+  background-color: linear-gradient( #E2E6EF);
   background: url('https://images.unsplash.com/photo-1613427924240-1635577f2c32?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80');
   background-size: cover;
 }
@@ -146,8 +146,13 @@ body {
   height: 100%;
 }
 .main__btn-container {
+  background: rgb(50,56,61);
+background: -moz-linear-gradient(180deg, rgba(50,56,61,1) 0%, rgba(50,56,61,1) 100%);
+background: -webkit-linear-gradient(180deg, rgba(50,56,61,1) 0%, rgba(50,56,61,1) 100%);
+background: linear-gradient(180deg, rgba(50,56,61,1) 0%, rgba(50,56,61,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#32383d",endColorstr="#32383d",GradientType=1);
+
   border-radius: 40px 40px 0 0;
-  background-color: #1A1E23;
   flex: auto;
   max-width: 414px;
   justify-self: stretch;
@@ -258,46 +263,105 @@ p {
 .social-media--linkedin:active {
   background-color: #006A99;
 }
+.google{
+  background: #00832D;
 
-
-.button {
-  appearance: none;
-  background: none;
-  border: none;
-  outline: none;
-
-  font-family: Roboto, sans-serif;
-  padding: 20px 40px;
-  border-radius: 8px;
-  color: #212121;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0 15px;
-  cursor: pointer;
-  transition: 0.4s;
 }
+.google-2{
+  background: #00AC47;
+}
+.blue{
+  background: #01ADEF;
 
-.button-2 {
-  color: #00AC47;
-  border: 3px solid #00AC47;
-  background-image: linear-gradient(to left,  #00AC47 50%,transparent 50%);
-  background-size: 200%;
-  background-position: 0%;
 }
+.blue-2{
+  background: #015E89;
+}
+.pushable {
+    
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+  }
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition:
+      transform
+      600ms
+      cubic-bezier(.3, .7, .4, 1);
+  }
+  .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+      to left,
+      hsl(340deg 100% 16%) 0%,
+      hsl(340deg 100% 32%) 8%,
+      hsl(340deg 100% 32%) 92%,
+      hsl(340deg 100% 16%) 100%
+    );
+  }
+  .front {
+    display: block;
+    position: relative;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    color: white;
+    will-change: transform;
+    transform: translateY(-7px);
+    transition:
+      transform
+      600ms
+      cubic-bezier(.3, .7, .4, 1);
+  }
 
-.button-2-blue {
-  color: #237dea;
-  border: 3px solid #237dea;
-  background-image: linear-gradient(to right, transparent 50%, #237dea 50%);
-  background-size: 200%;
-  background-position: 0%;
-}
-.button-2:hover {
-  color: #FFF;
-  background-position: 100%;
-}
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+  .pushable:hover {
+    filter: brightness(110%);
+  }
+  .pushable:hover .front {
+    transform: translateY(-6px);
+    transition:
+      transform
+      250ms
+      cubic-bezier(.3, .7, .4, 1.5);
+  }
+  
+  .pushable:hover .shadow {
+    transform: translateY(4px);
+    transition:
+      transform
+      250ms
+      cubic-bezier(.3, .7, .4, 1.5);
+  }
+  .pushable:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+  }
+  .pushable:focus:not(:focus-visible) {
+    outline: none;
+  }
 
-.button-2-blue:hover {
-  color: #FFF;
-  background-position: 100%;
-}
+
+button {
+  padding: 5px;
+  width: calc(75% - 10px);
+
+ }
